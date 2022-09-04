@@ -1,216 +1,251 @@
 <!DOCTYPE html>
 <html lang="es" prefix="og: https://ogp.me/ns#">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculo Idemnizaci&oacute;n</title>
+
     <link
       href="node_modules/bootstrap/dist/css/bootstrap.css"
       rel="stylesheet"
+      type="text/css"
     />
-    <script type="module" src="node_modules/jquery/dist/jquery.js"></script>
-    <script
-      type="module"
-      src="node_modules/bootstrap/dist/js/bootstrap.js"
-    ></script>
-    <script
-      type="module"
-      src="node_modules/@popperjs/core/lib/popper.js"
-    ></script>
   </head>
 
   <body>
     <div>
-      <div class="">
-        <form>
-          <div>
-            <div class="card container m-2 p-2">
-              <div class="card-header">
-                <h4>Salarios y Remuneraciones</h4>
+      <div>
+        <div class="card container m-2 p-2">
+          <div class="card-header">
+            <h4>Salarios y Remuneraciones</h4>
+          </div>
+
+          <!-- CAMPOS -->
+          <div class="card-body">
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 1</label>
               </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes1"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
 
-              <!-- CAMPOS -->
-              <div class="card-body">
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 1</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes1"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 2</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes2"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 3</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes3"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 4</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes4"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 5</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes5"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>Salario Mes 6</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="salariomes6"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>&Uacute;ltimo Aguinaldo recibido</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="ultimoaguinaldo"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col-sm-4 col-lg-4">
+                <label>&Uacute;ltimo Bono 14 recibido</label>
+              </div>
+              <div class="col-sm-8 col-lg-8">
+                <input
+                  type="number"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  step="0.01"
+                  title="Moneda"
+                  id="ultimob14"
+                  onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
+                />
+              </div>
+            </div>
+
+            <!-- FECHAS -->
+            <div class="row p-1">
+              <div class="container card mt-3 m-0 p-2">
+                <div class="card-header">
+                  <h4>Rango de Fechas Laborales</h4>
                 </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 2</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes2"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 3</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes3"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 4</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes4"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 5</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes5"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>Salario Mes 6</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="salariomes6"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>&Uacute;ltimo Aguinaldo recibido</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="ultimoaguinaldo"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <div class="row p-1">
-                  <div class="col-sm-4 col-lg-4">
-                    <label>&Uacute;ltimo Bono 14 recibido</label>
-                  </div>
-                  <div class="col-sm-8 col-lg-8">
-                    <input
-                      type="number"
-                      pattern="^\d*(\.\d{0,2})?$"
-                      step="0.01"
-                      title="Moneda"
-                      id="ultimob14"
-                      onblur="this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'"
-                    />
-                  </div>
-                </div>
-
-                <!-- FECHAS -->
-                <div class="row p-1">
-                  <div class="container card mt-3 m-0 p-2">
-                    <div class="card-header">
-                      <h4>Rango de Fechas Laborales</h4>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                      <label for="fechainicio">Inicio</label>
                     </div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-sm-6 col-lg-6">
-                          <label for="fechainicio">Inicio</label>
-                        </div>
-                        <div class="col-sm-6 col-lg-6">
-                          <label for="fechafinal">Final</label>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-sm-6 col-lg-6">
-                          <input type="date" id="fechainicio" />
-                        </div>
-                        <div class="col-sm-6 col-lg-6">
-                          <input type="date" id="fechafinal" />
-                        </div>
-                      </div>
+                    <div class="col-sm-6 col-lg-6">
+                      <label for="fechafinal">Final</label>
                     </div>
                   </div>
-                </div>
 
-                <!-- BOTONES -->
-                <div class="row p-1">
-                  <div class="col-sm-12">
-                    <input
-                      type="submit"
-                      id="user-data-next-button"
-                      value="Calcular Indemnizaci&oacute;n Universal"
-                      onclick="validar"
-                    />
+                  <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="fechainicio"
+                        name="fechainicio"
+                      />
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                      <input type="date" id="fechafinal" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- RESULTADO -->
-            <div class="card container m-2 p-2" id="Resultado" hidden>
-              <div class="card-header">
-                <h4>Resultado de C&aacute;lculo</h4>
+            <!-- BOTONES -->
+            <div class="row p-1">
+              <div class="col-sm-12">
+                <input
+                  type="submit"
+                  id="user-data-next-button"
+                  value="Calcular Indemnizaci&oacute;n Universal"
+                  onclick="validar()"
+                />
               </div>
             </div>
           </div>
-        </form>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="card container m-2 p-2" id="Resultado" hidden>
+          <div class="card-header">
+            <h4>Resultado de C&aacute;lculo</h4>
+          </div>
+          <div class="card-body">
+            <div
+              class="container"
+              id="contenedorresultado"
+              name="contenedorresultado"
+            ></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
 
+  <script
+    type="text/javascript"
+    charset="UTF-8"
+    src="node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ></script>
+
+  <script
+    type="text/javascript"
+    charset="UTF-8"
+    src="node_modules/jquery/dist/jquery.min.js"
+  ></script>
+
+  <script
+    type="text/javascript"
+    charset="UTF-8"
+    src="node_modules/moment/min/moment.min.js"
+  ></script>
+
+  <script src="https://unpkg.com/@popperjs/core@^2.0.0"></script>
+
+  <!-- <script
+    type="text/javascript"
+    charset="UTF-8"
+    src="node_modules/@popperjs/core/lib/popper.js"
+  ></script> -->
+
   <script>
+    $(document).ready(function () {
+      var newDate = new Date();
+      $("#fechainicio").val(newDate);
+      $("#fechainicio").val(newDate);
+    });
 
     function validar() {
       mes1 = $("#salariomes1").val();
@@ -219,6 +254,14 @@
       mes4 = $("#salariomes4").val();
       mes5 = $("#salariomes5").val();
       mes6 = $("#salariomes6").val();
+
+      var date1 = new Date($("#fechainicio").val());
+      var date2 = new Date($("#fechafinal").val());
+      var diffTime = Math.abs(date2 - date1);
+      var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      console.log(diffTime + " milliseconds");
+      console.log(diffDays + " days");
 
       if (
         mes1 == "" ||
@@ -229,6 +272,41 @@
         mes6 == ""
       ) {
         alert("Debe ingresar datos de Salarios");
+      } else {
+
+        // EJECUTA CALCULO
+        var m1 = parseFloat(mes1);
+        var m2 = parseFloat(mes2);
+        var m3 = parseFloat(mes3);
+        var m4 = parseFloat(mes4);
+        var m5 = parseFloat(mes5);
+        var m6 = parseFloat(mes6);
+
+        var sp = (m1 + m2 + m3 + m4 + m5 + m6) / 6;
+        var fIdemn = (sp / 365) * diffDays;
+
+        var agui = (sp / 365) * diffDays;
+        var b014 = (sp / 365) * diffDays;
+        var vac1 = (sp / 365) * (15 / 30) * diffDays;
+
+        // REMUEVE ATRIBUTO HIDDEN DE DIV QUE MUESTRA RESULTADO
+        $divPrincipal = $("#Resultado");
+        $divPrincipal.removeAttr("hidden");
+
+        // MUESTRA RESULTADO DE CALCULO
+        $miContenedor = $("#contenedorresultado");
+        $miContenedor.append(
+          "<p><b>INDEMNIZACION: </b>  Q." + fIdemn.toString() + " </p>"
+        );
+        $miContenedor.append(
+          "<p><b>AGUINALDO: </b>  Q." + agui.toString() + " </p>"
+        );
+        $miContenedor.append(
+          "<p><b>BONO 14: </b>  Q." + b014.toString() + " </p>"
+        );
+        $miContenedor.append(
+          "<p><b>VACACIONES: </b>  Q." + vac1.toString() + " </p>"
+        );
       }
     }
   </script>
