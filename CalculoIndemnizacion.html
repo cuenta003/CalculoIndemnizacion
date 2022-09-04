@@ -176,7 +176,12 @@
                       />
                     </div>
                     <div class="col-sm-6 col-lg-6">
-                      <input type="date" id="fechafinal" />
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="fechafinal"
+                        name="fechafinal"
+                      />
                     </div>
                   </div>
                 </div>
@@ -208,6 +213,7 @@
               id="contenedorresultado"
               name="contenedorresultado"
             ></div>
+            <input type="button" value="Recargar" onclick="redirect()" />
           </div>
         </div>
       </div>
@@ -247,6 +253,11 @@
       $("#fechainicio").val(newDate);
     });
 
+    function redirect() {
+      window.location.href = "CalculoIndemnizacion.html";
+      return false;
+    }
+
     function validar() {
       mes1 = $("#salariomes1").val();
       mes2 = $("#salariomes2").val();
@@ -273,7 +284,6 @@
       ) {
         alert("Debe ingresar datos de Salarios");
       } else {
-
         // EJECUTA CALCULO
         var m1 = parseFloat(mes1);
         var m2 = parseFloat(mes2);
@@ -296,16 +306,16 @@
         // MUESTRA RESULTADO DE CALCULO
         $miContenedor = $("#contenedorresultado");
         $miContenedor.append(
-          "<p><b>INDEMNIZACION: </b>  Q." + fIdemn.toString() + " </p>"
+          "<p><b>INDEMNIZACION: </b>  Q." + fIdemn.toFixed(2) + " </p>"
         );
         $miContenedor.append(
-          "<p><b>AGUINALDO: </b>  Q." + agui.toString() + " </p>"
+          "<p><b>AGUINALDO: </b>  Q." + agui.toFixed(2) + " </p>"
         );
         $miContenedor.append(
-          "<p><b>BONO 14: </b>  Q." + b014.toString() + " </p>"
+          "<p><b>BONO 14: </b>  Q." + b014.toFixed(2) + " </p>"
         );
         $miContenedor.append(
-          "<p><b>VACACIONES: </b>  Q." + vac1.toString() + " </p>"
+          "<p><b>VACACIONES: </b>  Q." + vac1.toFixed(2) + " </p>"
         );
       }
     }
